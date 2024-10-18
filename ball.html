@@ -1,0 +1,64 @@
+ 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Balling Game</title>
+  <style>
+    .game-container {
+      text-align: center;
+    } */
+     .move-up-button {
+      margin-top: 10px;
+    }
+    .easy-up-button {
+      margin-top: 10px;
+    }
+    .medium-up-button {
+      margin-top: 10px;
+    }
+    .hard-up-button {
+      margin-top: 10px;
+    }
+    .time-display {
+      margin-top: 10px;
+    }
+    .d-flex {
+      display: flex;
+    }
+    .flex-column {
+      flex-direction: column;
+    }
+    .justify-content-center {
+      justify-content: center;
+    }
+    .align-items-center {
+      align-items: center;
+    }
+    .text-center {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+   <div class="game-container">
+    <div id="phaser-game"></div>
+    <!-- <button class="move-up-button" id="move-up-button">Move Up</button> -->
+     
+    <!-- <div class="time-display" id="time-display">Time: 0 seconds</div>  
+   </div> -->
+  <div class="game-over-container d-flex flex-column justify-content-center align-items-center" style="display: none;"> 
+    <h3 class="text-center">Game is over</h3>  
+    <!-- <button class="easy-up-button" id="easy-up-button">Easy</button>&nbsp;  &nbsp;
+    <button class="medium-up-button" id="medium-up-button">Medium</button> &nbsp;&nbsp;
+    <button class="hard-up-button" id="hard-up-button">Hard</button>   -->
+    <!-- <h3 class="text-center" id="score-display">Your score is: 0</h3>  -->
+    <button class="move-up-button" id="restart-button">Restart</button>  
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/phaser@3/dist/phaser.js"></script>
+  <script src="ball.js"></script>
+ </body>
+</html>

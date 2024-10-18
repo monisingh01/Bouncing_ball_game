@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <title>Phaser Game</title>
+  <script src="//cdn.jsdelivr.net/npm/phaser@3.11.0/dist/phaser.js"></script>
+  <style>
+    body {
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    var config = {
+    type: Phaser.AUTO,
+    width: 800,
+    height: 600,
+    parent: "phaser-game",
+    backgroungimage:'/background.jpg',
+    physics: {
+        default: 'arcade',
+        arcade: {
+            gravity: { y: 300 },
+            debug: false
+        }
+    },
+    scene: {
+        preload: preload,
+        create: create,
+        update: update
+    }
+};
+
+var platforms;
+var game;
+var ball;
+var startTime
+var time = 0
+var score = 0;
+var scoreText;
+var gameOver = false;
+
+
+function preload() {
+      this.load.image("ball", "/football.jpg");
+      this.load.image("background", "/background.jpg");
+      this.load.image("surface", "/surface.png");
+    }
+
+
+    function create()
+{
+  this.add.image(500, 300, 'background').setDisplaySize(1000, 600); 
+      ball = this.physics.add.sprite(400, 200, "ball");
+      ball.setCollideWorldBounds(true);
+      ball.body.setGravityY(100);
+
+
+      let surface = this.physics.add.staticGroup();
+
+      
+      surface.create(400, 568, 'surface').setScale(2).refreshBody();
+
+
+//  Now let's create some ledges
+background.create(600, 400, 'ground');
+    background.create(50, 250, 'ground');
+    background.create(750, 220, 'ground');
+
+
+   window.onload = () => {
+      game = new Phaser.Game(config);
+    };
+  }
+  </script>
+</body>
+</html>
